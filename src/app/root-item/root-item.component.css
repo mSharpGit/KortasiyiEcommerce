@@ -1,0 +1,24 @@
+.portfolio-item {
+    margin-bottom: 30px;
+    padding: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .pagination {
+    margin-bottom: 30px;
+  }
+  
+.card-header{
+  width: 50%;
+  padding: 0px;
+  float: left;
+  
+}
+
+.right-content{
+  position: relative;
+  float: left;
+  width: 50% !important;
+  height: 367.5px;
+}

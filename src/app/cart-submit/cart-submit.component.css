@@ -1,0 +1,25 @@
+
+  
+  .row{
+    margin-top: 10px;
+  }
+  
+  .error{
+    color: red;
+  }
+  
+  label{
+      margin-top: 5px;
+  }
+  
+  .position{
+     position: absolute;
+      bottom: 0px; /*This is the part that glues it to the bottom*/
+      right: 20px;
+  
+  }
+  
+  .alert{
+    font-size: 11px !important;
+    padding: 4px; 
+  }

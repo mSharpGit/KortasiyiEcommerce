@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-2">
+<img src="{{ item.itemimage.imageURL }}" class="rounded" alt="item image" width="100%">
+    </div>
+    <div class="col-md-3">
+<ul class="list-group">
+<li class="list-group-item"><b>Item Name:</b> {{ item.itemname }}</li>
+<li class="list-group-item"><b>Item Number:</b> {{ item.itemnumber }}</li>
+<li class="list-group-item"><b>Item height:</b> {{ item.itemheight }}</li>
+<li class="list-group-item"><b>Item Color:</b> {{ item.itemcolor }}</li>
+</ul>
+</div>
+<div class="col-md-3">
+<ul class="list-group">
+<li class="list-group-item"><b>Item Price:</b> {{ item.itemprice | currency }}</li>
+<li class="list-group-item"><b>Item Color:</b> {{ item.itemdescription }}</li>
+<li class="list-group-item"><b>Item country:</b> {{ item.itemcountry }}</li>
+<li class="list-group-item"><b>Item quantity:</b> {{ item.itemquantity }}</li>
+</ul>
+</div>
+<div class="col-md-3">
+    <ul class="list-group">
+    <li class="list-group-item"><b>Item thickbess:</b> {{ item.itemthickness }}</li>
+    <li class="list-group-item"><b>Item weight:</b> {{ item.itemweight }}</li>
+    <li class="list-group-item"><b>Item width:</b> {{ item.itemwidth }}</li>
+    <li class="list-group-item"><b>Item image:</b> {{ item.itemimage.imageName }}</li>
+    </ul>
+</div>
+<div class="col-md-1 text-right">
+        <button type="button" class="btn btn-danger  m-1 align-bottom" (click)="itemDetail(item)"><fa name="edit" size="1x"></fa></button>
+        <button type="button" class="btn btn-danger  m-1 align-bottom" (click)="delete(item)" ><fa name="trash" size="1x"></fa></button>
+
+        </div>
+</div>

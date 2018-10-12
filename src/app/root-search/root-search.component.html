@@ -1,0 +1,4 @@
+<form class="form-inline" [formGroup]="searchForm">
+    <input class="form-control mr-sm-2" type="text" formControlName="searchItems" placeholder="Search" aria-label="Search">
+    <a class="btn btn-danger text-white" (click)="search(searchForm.value)">Search</a>
+  </form>

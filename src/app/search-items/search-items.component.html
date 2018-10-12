@@ -1,0 +1,7 @@
+<div class="scrollable">
+        <h1>Search Results</h1>
+        <div *ngIf="!(items | async)?.length">Sorry No Search results for "{{ query }}"</div>
+    <div class="row" *ngFor="let item of items | async">
+                <app-item  [item]= item></app-item>
+</div>
+</div>

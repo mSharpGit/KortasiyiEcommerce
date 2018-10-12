@@ -1,0 +1,25 @@
+.example-container {
+padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch;
+  height: 100vh;
+}
+.mat-drawer{
+	 height: 100%;
+	 width: 15%;
+	 visibility: visible;
+}
+
+
+.mat-drawer-content{
+	 height: 100%;
+	 width: 85%;
+}
+h2{
+	margin: 20px;
+	
+}
+

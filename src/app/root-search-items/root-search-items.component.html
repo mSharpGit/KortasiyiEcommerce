@@ -1,0 +1,9 @@
+
+ <div class="container padd">
+    
+    <h1 class="">Search results</h1>
+    <div *ngIf="!(items | async)?.length">Sorry No Search results for "{{ query }}"</div>
+
+          <app-root-item [items]= items ></app-root-item>
+
+    </div>

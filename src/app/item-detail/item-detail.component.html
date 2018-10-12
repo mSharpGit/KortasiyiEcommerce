@@ -1,0 +1,144 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-12">
+     <form [formGroup]="editForm"  *ngIf="item" (ngSubmit)="update(editForm.value)">
+     <div class="row">
+    <div class="form-group col-md-6 col-md-offset-6">
+   
+        
+
+   <div class="form-group">
+        <label for="inputtext1">Item Name</label>
+        <input type="text"  class="form-control" formControlName="itemname" required id="inputtext1" placeholder="Enter item name">
+        <div *ngIf="itemname.invalid && (itemname.dirty || itemname.touched)" class="alert alert-danger">
+                <div *ngIf="itemname.errors.required">Item Name is required</div>
+                
+            </div>      
+    </div>
+        
+        <div class="form-group">
+    <label for="inputtext2">Item Number</label>
+        <input type="text" formControlName="itemnumber" required class="form-control" id="inputtext2" required  placeholder="Enter item number">
+        <div *ngIf="itemnumber.invalid && (itemnumber.dirty || itemnumber.touched)" class="alert alert-danger">
+                <div *ngIf="itemnumber.errors.required">Item Number is required</div>
+            </div> 
+    </div>
+    <div class="form-group">
+    <label for="inputtext3">Item Price</label>
+        <input type="text" formControlName="itemprice" required class="form-control" id="inputtext3" placeholder="Enter item price">
+        <div *ngIf="itemprice.invalid && (itemprice.dirty || itemprice.touched)" class="alert alert-danger">
+                <div *ngIf="itemprice.errors.required">Item price is required</div>
+            <div *ngIf="itemprice.errors.pattern">Item price should be a number</div>
+            </div> 
+    </div>
+    <div class="form-group">
+    <label for="inputtext4">Item Quantity</label>
+        <input type="text" formControlName="itemquantity" required class="form-control" id="inputtext4" placeholder="Enter item quantity">
+        <div *ngIf="itemquantity.invalid && (itemquantity.dirty || itemquantity.touched)" class="alert alert-danger">
+                <div *ngIf="itemquantity.errors.required">Item quantity is required</div>
+            </div>
+    </div>
+    <div class="form-group">
+    <label for="inputtext5">Item Description</label>
+        <input type="text" formControlName="itemdescription" required class="form-control" id="inputtext5" placeholder="Enter item description">
+        <div *ngIf="itemdescription.invalid && (itemdescription.dirty || itemdescription.touched)" class="alert alert-danger">
+                <div *ngIf="itemdescription.errors.required">Item description is required</div>
+            </div> 
+    </div>
+    <div class="form-group">
+    <label for="inputtext6">Item Color</label>
+        <input type="text" formControlName="itemcolor" required class="form-control" id="inputtext6" placeholder="Enter item color">
+        <div *ngIf="itemcolor.invalid && (itemcolor.dirty || itemcolor.touched)" class="alert alert-danger">
+                <div *ngIf="itemcolor.errors.required">Item color is required</div>
+            </div> 
+    </div>
+    <div class="form-group">
+    <label for="inputtext7">Item country</label>
+        <!--<input type="text" formControlName="itemcountry" class="form-control" id="inputtext7" placeholder="Enter item country">-->
+        <select formControlName="itemcountry" class="form-control" required id="inputtext7">
+                <option [value]="country" *ngFor="let country of countries">{{country}}</option>
+              </select>
+              <div *ngIf="itemcountry.invalid && (itemcountry.dirty || itemcountry.touched)" class="alert alert-danger">
+                    <div *ngIf="itemcountry.errors.required">Item country is required</div>
+                </div> 
+  </div>
+  <div class="form-group">
+        <input type="text"  class="form-control" formControlName="itemid" id="inputtext1" placeholder="Enter item name" hidden>
+        </div>
+    </div>
+
+    <div class="form-group  col-md-6 col-md-offset-6">
+            <div class="form-group">
+                    <label for="inputtext8">Item Height</label>
+                    <input type="text" formControlName="itemheight" required class="form-control" id="inputtext8" placeholder="Enter item height">
+                    <div *ngIf="itemheight.invalid && (itemheight.dirty || itemheight.touched)" class="alert alert-danger">
+                            <div *ngIf="itemheight.errors.required">Item height is required</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                <label for="inputtext7">Item Width</label>
+                    <input type="text" formControlName="itemwidth" required class="form-control" id="inputtext9"  placeholder="Enter item width">
+                    <div *ngIf="itemwidth.invalid && (itemwidth.dirty || itemwidth.touched)" class="alert alert-danger">
+                            <div *ngIf="itemwidth.errors.required">Item width is required</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                <label for="inputtext10">Item Thickness</label>
+                    <input type="text" formControlName="itemthickness" required class="form-control" id="inputtext10" placeholder="Enter item thickness">
+                    <div *ngIf="itemthickness.invalid && (itemthickness.dirty || itemthickness.touched)" class="alert alert-danger">
+                            <div *ngIf="itemthickness.errors.required">Item thickness is required</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                <label for="inputtext11">Item Weight</label>
+                    <input type="text" formControlName="itemweight" required class="form-control" id="inputtext11" placeholder="Enter item weight">
+                    <div *ngIf="itemweight.invalid && (itemweight.dirty || itemweight.touched)" class="alert alert-danger text-">
+                            <div *ngIf="itemweight.errors.required">Item weight is required</div>
+                        </div>
+                </div>   
+                  <div class="form-group">
+                     <div class="row">
+                     <div class="col-md-9">
+                    <label for="inputtext12">Item Image</label>
+                    <input type="file" formControlName="itemimage" class="form-control" id="inputtext12" (change)="onFileChange($event)">
+                    <div *ngIf="itemimage.invalid && (itemimage.dirty || itemimage.touched)" class="alert alert-danger">
+                            <div *ngIf="itemimage.errors.required">Item Image is required</div>
+                        </div> 
+                    <div *ngIf="uploadProgress | async as pct">
+                
+                      <progress class="progress is-info"
+                                [value]="pct"
+                                max="100">
+                      </progress>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                    <img class="img-thumbnail" name="preview" id="preview" src="assets/no-image.png" width="108px" height="148px"
+                            >
+                     </div> 
+                    
+                   </div>
+                   </div>
+                   
+                     <div class="form-group">
+                    <label class="error">{{errorMessage}}</label>
+                   </div>
+                   <div class="form-group">
+                     <div class="row position">
+                    <div class="col-md-6">
+      <button type="submit" class="btn btn-primary " >Update Item</button>
+      </div>
+      <div class="col-md-6">
+      <button type="button" (click)="editForm.reset()" class="btn btn-primary " >Reset</button>
+      </div>
+      </div>
+      </div>
+    </div>
+   
+    
+    </div>
+  </form>
+      </div>
+    </div>
+  </div>
+  

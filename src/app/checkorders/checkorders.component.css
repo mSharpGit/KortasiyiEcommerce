@@ -1,0 +1,18 @@
+.alignment {
+    position: absolute;
+     bottom: 20px; /*This is the part that glues it to the bottom*/
+     right: 20px;
+ 
+ }
+ 
+ .row {
+     margin-left: 0px;
+     margin-right: 0px;
+     margin-bottom: 10px;
+ }
+ .scrollable{
+     height: 85%;
+     width: 96%;
+     margin: 2%;
+     overflow-y: scroll; 
+ }

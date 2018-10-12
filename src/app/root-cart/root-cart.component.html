@@ -1,0 +1,107 @@
+<div class="container padd">
+  <h1>Your Shopping Cart</h1>
+ <!--<div *ngIf="cartItems">
+  <div *ngFor="let item of cartItems.items">
+  <h1>{{ item.itemid }}</h1>
+</div>
+</div>
+  <div *ngFor="let item of items | async"></div>-->
+  
+
+  <div *ngIf="cartItems">
+<div class="row cart-row" *ngFor="let item of cartItems.items">
+  <div class="col-xs-12 col-sm-2">
+    
+    <a (click)="details(item)">
+      <img 
+        src="{{ item.itemimage.imageURL}}" 
+        alt="{{ item.itemimage.imageName}}" 
+        class="img-responsive"
+        width="75px"
+      >
+     </a> 
+    </div>
+
+     <div class="col-xs-12 col-sm-4">
+        <a (click)="details(item)">
+      <h3>{{ item.itemname }}</h3>
+      <div>{{ item.itemdescription }}</div>
+      <div><small>{{ item.itemnumber }}</small></div>
+    </a>
+    </div>
+
+    <div class="col-xs-5 col-sm-2">
+        <a (click)="details(item)">
+      <h3 class="h3-price">
+        {{ item.itemprice | currency }}
+      </h3>
+      <small>each</small>
+      </a>
+    </div>
+
+
+      <div class="col-xs-7 col-sm-2">
+          <a (click)="removeItem(item)" >
+            <span 
+              class="glyphicon glyphicon-remove-sign text-danger" 
+              aria-hidden="true"
+            ><fa name="times-circle" size="2x"></fa></span>
+          </a>
+        </div>
+       
+    <!--<div class="col-xs-7 col-sm-2">
+      <div class="form-group">
+        <input 
+          type="number" 
+          name="updates[]" 
+          id="updates_{{ item.itemid }}" 
+          value="{{ item.itemquantity }}" 
+          min="0"
+         class="cart-qty-input" 
+        >
+        <small>quantity</small>
+      </div>
+    </div>-->
+   
+  
+ </div><!-- end .row.cart-row --> 
+
+ <div class="row cart-row">
+    <div class="col-xs-12 col-sm-2">
+      
+      
+      </div>
+  
+       <div class="col-xs-12 col-sm-4">
+          
+      </div>
+  
+      <div class="col-xs-5 col-sm-2">
+          <div>Total: {{ sum }}</div>
+      </div>
+  
+  
+        <div class="col-xs-7 col-sm-2">
+            <button type="reset" (click)="submitCart()" class="btn btn-primary ">Checkout</button>
+          </div>
+         
+      <!--<div class="col-xs-7 col-sm-2">
+        <div class="form-group">
+          <input 
+            type="number" 
+            name="updates[]" 
+            id="updates_{{ item.itemid }}" 
+            value="{{ item.itemquantity }}" 
+            min="0"
+           class="cart-qty-input" 
+          >
+          <small>quantity</small>
+        </div>
+      </div>-->
+     
+    
+   </div>
+ 
+</div>
+
+  </div>

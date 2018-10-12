@@ -1,0 +1,43 @@
+<div class="scrollable">
+
+    <div class="row" *ngFor="let order of orders | async">
+
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item"><b>Name:</b> {{ order.name }}</li>
+                <li class="list-group-item"><b>Surname:</b> {{ order.surname }}</li>
+                <li class="list-group-item"><b>Age:</b> {{ order.age }}</li>
+                <li class="list-group-item"><b>Phone:</b> {{ order.phone }}</li>
+                <li class="list-group-item"><b>Email:</b> {{ order.email }}</li>
+                <li class="list-group-item"><b>Address:</b> {{ order.address }}</li>
+            </ul>
+        </div>
+       
+        <div class="col-md-6">
+            <app-mapview [lat]="order.latitude" [lng]="order.longitude"></app-mapview>
+        </div>
+
+        <div class="col-md-1">
+            <ul class="list-group">
+                <!-- <li class="list-group-item"><b>Latitude:</b> {{ order.latitude }}</li>
+                <li class="list-group-item"><b>Latitude:</b> {{ order.longitude }}</li> -->
+            </ul>
+            <button type="button" class="btn btn-danger  m-1 align-bottom" (click)="goToCart(order.cartid)">
+                Prepare Order
+            </button>
+        </div>
+
+
+        <div class="col-md-1 text-right">
+            <!-- <button type="button" class="btn btn-danger  m-1 align-bottom" (click)="itemDetail(item)">
+                <fa name="edit" size="1x"></fa>
+            </button> -->
+            <button type="button" class="btn btn-danger  m-1 align-bottom" (click)="deleteCart(order)">
+                <fa name="trash" size="1x"></fa>
+            </button>
+
+
+        </div>
+    </div>
+
+</div>
